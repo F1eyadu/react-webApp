@@ -1,4 +1,7 @@
 import {combineReducers} from 'redux-immutable'
+import TabbarReducer from '../components/tabbar/store/reducer'
+import HomeReducer from '../pages/Home/store/reducer'
 export default combineReducers({
-
+    tabbar: TabbarReducer,
+    home: HomeReducer
 })

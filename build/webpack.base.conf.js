@@ -15,9 +15,9 @@ module.exports = {
             {
                 test: /\.(jsx|js)$/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     options: {
-                        'presets': ['es2015', "react"]
+                        'presets': ['es2015', 'react']
                     }
                 },
                 exclude: /node_modules/
@@ -31,24 +31,26 @@ module.exports = {
                 use: ['file-loader']
             },
             {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: "style-loader"
-                    }, {
-                        loader: "css-loader"
-                    }, {
-                        loader: 'postcss-loader'
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader', {
+                    loader: 'sass-resources-loader',
+                    options: {
+                        resources: path.resolve(__dirname, './../src/app.scss')
                     }
-                ]
+                }]
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             }
         ]
     },
-    resolve:{
-        alias:{
-            '@':path.resolve(__dirname, '../src')
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, '../src'),
+            '/': path.resolve(__dirname, '../src/assets')
         },
-        extensions: ['.js', '.jsx', '.css', '.styl']
+        extensions: ['.js', '.jsx', '.css', '.scss']
     },
     plugins: [
         new HtmlWebpackPlugin({
