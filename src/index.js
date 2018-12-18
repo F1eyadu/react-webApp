@@ -9,7 +9,7 @@ import '../src/assets/css/reset.css'
 import Index from './pages/Home/index'
 import Order from './pages/Order/index'
 import My from './pages/My/index'
-import { BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter , Route} from 'react-router-dom'
 class App extends React.Component{
     render(){
         return(
@@ -17,6 +17,7 @@ class App extends React.Component{
                 <BrowserRouter>
                     <div>
                         <Route path="/" exact component={Index}></Route>
+                        <Route path="/home" exact component={Index}></Route>
                         <Route path="/order" exact component={Order}></Route>
                         <Route path="/my" exact component={My}></Route>
                         <Tabbar/>

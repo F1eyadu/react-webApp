@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './index.scss'
 import {connect} from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { getChangeType} from './store/actionCreator'
 class Tabbar extends Component{
     constructor(props){
@@ -14,10 +15,10 @@ class Tabbar extends Component{
                 cls +=' active'
             }
             return (
-                <div onClick={()=> changeTab(item.get('key'))} key={index} className={cls}>
+                <NavLink  to={`/${item.get('key')}`} onClick={()=> changeTab(item.get('key'))} key={index} className={cls}>
                     <div className="tab-icon"></div>
                     <div className="btn-name">{item.get('name')}</div>
-                </div>
+                </NavLink>
             )
         })
     }
