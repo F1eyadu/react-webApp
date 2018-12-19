@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 import './index.scss'
 import {connect} from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 import { getChangeType} from './store/actionCreator'
 class Tabbar extends Component{
     constructor(props){
         super(props)
     }
     renderItems(){
-        let {selectKey, tabs, changeTab} = this.props
+        let {tabs,selectKey, changeTab} = this.props
        return tabs.map((item, index) => {
-            let cls = item.get('key') + ' btn-item';
-            if(item.get('key') === selectKey){
-                cls +=' active'
+            let cls = item.get('key') + ' btn-item'
+            if(selectKey === item.get('key')){
+                cls+=' active'
             }
             return (
-                <NavLink  to={`/${item.get('key')}`} onClick={()=> changeTab(item.get('key'))} key={index} className={cls}>
+                <NavLink to={`/${item.get('key')}`}  onClick={()=> changeTab(item.get('key'))} key={index} className={cls}>
                     <div className="tab-icon"></div>
                     <div className="btn-name">{item.get('name')}</div>
                 </NavLink>
