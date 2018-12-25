@@ -1,4 +1,4 @@
-import { fromJS} from 'immutable'
+import { fromJS, toJS} from 'immutable'
 import{ CHANGE_TAB, GET_FILTER_DATA, CHANGE_FILTER} from './actionTypes'
 let tabs = {}
 tabs['cate'] = {
@@ -33,11 +33,17 @@ export default (state = defaultState, action) => {
         case GET_FILTER_DATA:
             return state.set('filterData', fromJS(action.data))
         case CHANGE_FILTER:
-            return state.get('tabs').get(action.key).merge({
+            let data = state.get('tabs').toJS()
+            const item = action.item.toJS()
+            data[action.key] = {
                 key: action.key,
-                text: action.item.get('name'),
-                obj: action.item
-            })
+                text: item.name,
+                obj: item
+            }
+        return state.merge({
+            tabs: fromJS(data),
+            closePanel: true
+        })
         default:
             return state
     }

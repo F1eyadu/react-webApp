@@ -22,7 +22,7 @@ class Home extends React.Component{
 
 const mapState = (state)=> ({
     category: state.getIn(['home','cateGory']),
-    list: state.getIn(['home', 'lists'])
+    list: state.getIn(['home', 'lists']),
 })
 const mapDispatch = (dispatch) =>({
     homeData(){
