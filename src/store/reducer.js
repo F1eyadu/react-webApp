@@ -3,9 +3,11 @@ import TabbarReducer from '../components/tabbar/store/reducer'
 import HomeReducer from '../pages/Home/store/reducer'
 import OrderReducer from '../pages/Order/store/reducer'
 import CateReducer from '../pages/classify/store/reducer'
+import SaleReducer from '../pages/sale/store/reducer'
 export default combineReducers({
     tabbar: TabbarReducer,
     home: HomeReducer,
     order: OrderReducer,
-    cate: CateReducer
+    cate: CateReducer,
+    sale: SaleReducer
 })

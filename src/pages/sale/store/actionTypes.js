@@ -1,0 +1,6 @@
+export const CHANGE_TAB = 'change_tab'
+export const SET_FOOD = 'set_food'
+export const CHENG_INDEX = 'change_index'
+export const ADD_SELECT_ITEM = 'add_select_item'
+export const MINE_SELECT_ITEM = 'mine_select_item'
+export const SET_SHOW_CONTENT = 'set_show_content'
