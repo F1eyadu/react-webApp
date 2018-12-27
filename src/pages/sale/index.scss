@@ -3,14 +3,14 @@ body{
 }
 .detail{
     .tab-bar{
-        font-size: 16px;
+        font-size: px2rem(16px);
         display: flex;
         border: 1px solid #f0f0f0;
-        margin-top: 64px;
+        margin-top: px2rem(64px);
         .tab-item{
             flex: 1;
-            height: 45px;
-            line-height: 45px;
+            height: px2rem(45px);
+            line-height: px2rem(45px);
             position: relative;
             color: #666;
             text-align: center;
@@ -18,8 +18,8 @@ body{
                 &::after{
                     content: '';
                     display: block;
-                    height: 4px;
-                    width: 60px;
+                    height: px2rem(4px);
+                    width: px2rem(60px);
                     position: absolute;
                     bottom: 0;
                     left: 50%;
@@ -47,23 +47,23 @@ body{
     right: 0;
     bottom: 0;
     left: 0;
-    top: 110px;
+    top: px2rem(110px);
     display: flex;
     overflow: hidden;
     .left-bar{
-        width: 85px;
+        width: px2rem(85px);
         background: #efefef;
         overflow: auto;
         height: 100%;
     }
     .left-bar-inner{
-        padding-bottom: 85px;
+        padding-bottom: px2rem(85px);
     }
     .left-item{
-        font-size: 14px;
+        font-size: px2rem(14px);
         color: #656565;
         text-align: center;
-        height: 60px;
+        height: px2rem(60px);
         border-bottom: 1px solid #bfbfbf;
         display: flex;
         justify-content: center;
@@ -73,99 +73,99 @@ body{
         }
     }
     .item-text{
-        line-height: 20px;
+        line-height: px2rem(20px);
         align-items: center;
         text-align: center;
     }
     .item-icon{
-        width: 20px;
-        height: 20px;
+        width: px2rem(20px);
+        height: px2rem(20px);
         display: inline-block;
-        vertical-align: -4px;
-        margin-right: 6px;
+        vertical-align: px2rem(-4px);
+        margin-right: px2rem(6px);
     }
     .right-list{
         height: 100%;
     }
     .right-list-item{
-        font-size: 16px;
-        padding-bottom: 80px;
+        font-size:px2rem(16px);
+        padding-bottom: px2rem(80px);
     }
     .right-content{
         flex: 1;
-        margin-left: 10px;
+        margin-left: px2rem(10px);
         height: 100%;
         overflow: auto;
     }
     .right-title{
-        font-size: 13px;
+        font-size: px2rem(13px);
         color: #333;
-        padding-left: 5px;
-        margin-top: 5px;
-        border-left: 2px solid #ffd161;
+        padding-left: px2rem(5px);
+        margin-top: px2rem(5px);
+        border-left: px2rem(2px) solid #ffd161;
     }
 }
 
 .menu-item{
     display: flex;
-    padding: 25px 0;
+    padding: px2rem(25px) 0;
     border-bottom: 1px solid #f0f0f0;
     position: relative;
     .img{
-        width: 62px;
-        height: 62px;
-        margin-right: 10px;
+        width: px2rem(62px);
+        height: px2rem(62px);
+        margin-right: px2rem(10px);
     }
     .menu-item-right{
         flex: 1;
     }
     .item-title{
-        font-size: 16px;
+        font-size: px2rem(16px);
         color: #2f2f2f;
     }
     .item-desc, .item-zan{
         color: #a9a9a9;
-        font-size: 12px;
-        margin-top: 6px;
-        line-height: 14px;
-        padding-right: 4px;
+        font-size: px2rem(12px);
+        margin-top: px2rem(6px);
+        line-height: px2rem(14px);
+        padding-right: px2rem(4px);
         &.item-desc{
-            line-height: 17px;
+            line-height: px2rem(17px);
         }
     }
     .item-price{
-        margin-top: 10px;
+        margin-top: px2rem(10px);
         color: #fe4d3d;
-        font-size: 18px;
+        font-size: px2rem(18px);
     }
     .unit{
         color: #a9a9a9;
-        font-size: 12px;
+        font-size: px2rem(12px);
     }
     .select-content{
         position: absolute;
-        right: 9px;
-        bottom: 21px;
+        right: px2rem(9px);
+        bottom: px2rem(21px);
         display: flex;
         .plus{
-            width: 25px;
-            height: 25px;
+            width: px2rem(25px);
+            height: px2rem(25px);
             background-size: cover;
             background-image: url('../../assets/images/plus.png')
         }
         .minus{
-            width: 25px;
-            height: 25px;
+            width: px2rem(25px);
+            height: px2rem(25px);
             background-size: cover;
             background-image: url('../../assets/images/reduce.png')
         }
         .count{
-            font-size: 15px;
+            font-size: px2rem(15px);
             color: #2f2f2f;
-            width: 20px;
-            height: 25px;
-            line-height: 25px;
-            margin:  0 2px;
+            width: px2rem(20px);
+            height: px2rem(25px);
+            line-height:px2rem(25px);
+            margin:  0 px2rem(2px);
             text-align: center;
         }
     }
@@ -179,114 +179,114 @@ body{
     right: 0;
     z-index: 99;
     .bottom-content{
-        height: 50px;
+        height: px2rem(50px);
         display: flex;
         background: rgba(51, 51, 51, .9);
     }
     .shop-icon{
-        width: 55px;
-        height: 55px;
+        width: px2rem(55px);
+        height: px2rem(55px);
         background-image: url('../../assets/images/shop-icon.png');
         background-size: cover;
-        margin-top: -15px;
-        margin-left: 12px;
+        margin-top: px2rem(-15px);
+        margin-left: px2rem(12px);
         position: relative;
     }
     .price-content{
         flex: 1;
-        padding-top: 8px;
-        padding-left: 7px;
+        padding-top: px2rem(8px);
+        padding-left: px2rem(7px);
     }
     .total-price{
-        font-size: 20px;
+        font-size: px2rem(20px);
         color: #fff
     }
     .other-price{
-        font-size: 12px;
+        font-size: px2rem(12px);
         color: #999;
-        margin-top: 2px;
+        margin-top: px2rem(2px);
     }
     .dot-num{
         position: absolute;
         background: #ff0000;
-        width: 15px;
-        height: 15px;
-        font-size: 12px;
+        width: px2rem(15px);
+        height: px2rem(15px);
+        font-size: px2rem(12px);
         color: #fff;
         border:1px solid #fff;
-        top: 2px;
+        top: px2rem(2px);
         right: 0;
         border-radius: 50%;
         text-align: center;
-        line-height: 15px;
+        line-height: px2rem(15px);
     }
     .submit-btn{
-        width: 110px;
+        width: px2rem(110px);
         height: 100%;
         background-color: #ffd161;
         color: #333;
-        font-size: 16px;
-        line-height: 50px;
+        font-size: px2rem(16px);
+        line-height: px2rem(50px);
         text-align: center;
     }
     .choose-content{
         background: #fff;
     }
     .content-top{
-        height: 35px;
+        height: px2rem(35px);
         background: #f4f4f4;
-        font-size: 11px;
+        font-size: px2rem(11px);
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
     .clear-car{
-        margin-left: 10px;
-        margin-right: 5px;
+        margin-left: px2rem(10px);
+        margin-right: px2rem(5px);
         &::before{
             content: '';
-            width: 13px;
-            height: 13px;
+            width: px2rem(13px);
+            height:px2rem(13px);
             display: block;
             background-image: url('../../assets/images/clear.jpeg');
             background-size: cover;
             float: left;
             margin: -1px;
-            margin-right: 2px;
+            margin-right: px2rem(2px);
         }
     }
     .choose-item{
         display:flex;
-        font-size: 15px;
+        font-size: px2rem(15px);
         color: #2f2f2f;
-        height: 35px;
+        height: px2rem(35px);
         align-items: center;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: px2rem(10px)x;
+        padding-bottom: px2rem(10px);
         border-bottom: 1px solid #ddd;
         .price{
-            margin-left: 5px;
-            margin-right: 25px;
+            margin-left: px2rem(5px);
+            margin-right: px2rem(25px);
         }
     }
     .item-name{
         flex: 1;
-        padding-left: 10px;
+        padding-left: px2rem(10px);
     }
     .select-content{
         position: relative;
         display: flex;
-        margin-right: 8px;
+        margin-right: px2rem(8px);
     }
     .plus{
-        width: 25px;
-        height: 25px;
+        width: px2rem(25px);
+        height: px2rem(25px);
         background-size: cover;
         background-image: url('../../assets/images/plus.png')
     }
     .minus{
-        width: 25px;
-        height: 25px;
+        width: px2rem(25px);
+        height: px2rem(25x);
         background-size: cover;
         background-image: url('../../assets/images/reduce.png')
     }
@@ -305,8 +305,8 @@ body{
 // 评价
 .comment-score{
     display: flex;
-    padding: 15px 25px;
-    border-top: 10px solid #f6f6f6;
+    padding: px2rem(15px) px2rem(25px);
+    border-top: px2rem(10px) solid #f6f6f6;
     border-bottom: 1px solid #d5d5d5;
     .mail-score-content{
         display: flex;
@@ -319,19 +319,19 @@ body{
         justify-content: space-around;
     }
     .taste-star-wrap, .package-star-wrap{
-        margin: 0 15px;
+        margin: 0 px2rem(15px);
     }
     .package-score, .taste-score{
         display: flex;
         justify-content: center;
     }
     .mail-score{
-        font-size: 32px;
+        font-size: px2rem(22px);
         color: #ffb000;
-        margin-bottom: 5px;
+        margin-bottom: px2rem(5px);
     }
     .mail-text{
-        font-size: 12px;
+        font-size: px2rem(12px);
         color: #656565;
     }
     .taste-text,.package-text {
@@ -339,7 +339,7 @@ body{
         color: #554343;
     }
     .taste-score-text, .package-score-text{
-        font-size: 15px;
+        font-size: px2rem(15px);
         color: #ffb000;
     }
     .send-score-content {
@@ -361,72 +361,72 @@ body{
 
 .comment-item{
     display: flex;
-    padding: 15px 15px 12px 15px;
+    padding: px2rem(15px) px2rem(15px) px2rem(12px) px2rem(15px);
     border-bottom: 1px solid #f0f0f0;
     position: relative;
     .comment-time{
         position: absolute;
-        right: 20px;
-        top: 20px;
+        right: px2rem(20px);
+        top: px2rem(20px);
         color: #898989;
-        font-size: 12px;
+        font-size: px2rem(12px);
     }
     .avatar{
-        width: 40px;
-        height: 40px;
+        width: px2rem(40px);
+        height: px2rem(40px);
         border-radius: 50%;
     }
     .nickname{
         color: #2f2f2f;
-        font-size: 16px;
+        font-size: px2rem(16px);
     }
     .star-and-time{
-        margin-top: 6px;
+        margin-top: px2rem(6px);
         display: flex;
     }
     .send-time{
         color: #898989;
-        font-size: 12px;
-        margin-left: 10px;
+        font-size: px2rem(12px);
+        margin-left: px2rem(10px);
     }
     .comment-text{
-        margin-top: 6px;
-        font-size: 14px;
-        line-height: 20px;
+        margin-top: px2rem(6px);
+        font-size: px2rem(14px);
+        line-height: px2rem(202px);
     }
     .img-content{
-        margin-top: 8px;
+        margin-top: px2rem(8px);
     }
     .img-item{
         display: block;
         float: left;
-        width: 80px;
-        height: 80px;
+        width: px2rem(80px);
+        height: px2rem(80px);
         background-size: cover;
         background-position: center center;
-        margin-right: 5px;
+        margin-right: px2rem(5px);
     }
     .tag-info{
-        margin-top: 4px;
+        margin-top:px2rem(4px);
         color: #898989;
-        font-size: 12px;
-        line-height: 15px;
+        font-size: px2rem(12px);
+        line-height: px2rem(15px);
         background-image: url('../../assets/images/tag.png');
         background-repeat: no-repeat;
         background-position: left 1px;
-        background-size: 12px 12px;
-        padding-left: 20px;
+        background-size: px2rem(12px) px2rem(12px);
+        padding-left: px2rem(20px);
     }
     .like-info{
-        margin-top: 4px;
+        margin-top: px2rem(4px);
         color: #576b95;
-        font-size: 12px;
-        line-height: 18px;
+        font-size: px2rem(12px);
+        line-height: px2rem(18px);
         background-image: url('../../assets/images/favor.png');
         background-repeat: no-repeat;
         background-position: left 1px;
-        background-size: 12px 12px;
-        padding-left: 20px;
+        background-size: px2rem(12px) px2rem(12px);
+        padding-left: px2rem(20px);
     }
 }
 
