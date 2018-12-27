@@ -1,4 +1,5 @@
 import {CHANGE_TAB, SET_FOOD, CHENG_INDEX, ADD_SELECT_ITEM, MINE_SELECT_ITEM, SET_SHOW_CONTENT, CLEAR_CAR, GET_COMMENT_DATA, GET_RESTANURANT_INFO} from './actionTypes'
+import { IS_LOAD} from '@/components/scrollView/store/actionTypes'
 import axios from 'axios'
 export const changeTab = (key) =>({
     type: CHANGE_TAB,
@@ -51,10 +52,18 @@ const commentData = (result)=>({
 
 export const getCommentLists = () => {
     return (dispatch) =>{
+        dispatch({
+            type: IS_LOAD,
+            flag: true
+        })
         axios.get('https://www.easy-mock.com/mock/5c00d11fb5ca4f6a533ac6dd/bicycleApi/comment')
         .then((res) =>{
             if(res.status === 200){
                 dispatch(commentData(res.data))
+                dispatch({
+                    type: IS_LOAD,
+                    flag: false
+                })
             }
         })
     }
