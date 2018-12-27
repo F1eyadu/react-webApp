@@ -30,6 +30,14 @@ body{
             }
         }
     }
+    .mask{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,.7);
+    }
 }
 
 
@@ -291,5 +299,199 @@ body{
         margin-left: px2rem(2px);
         margin-right: px2rem(2px);
         text-align: center;
+    }
+}
+
+// 评价
+.comment-score{
+    display: flex;
+    padding: 15px 25px;
+    border-top: 10px solid #f6f6f6;
+    border-bottom: 1px solid #d5d5d5;
+    .mail-score-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .other-score-content{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-around;
+    }
+    .taste-star-wrap, .package-star-wrap{
+        margin: 0 15px;
+    }
+    .package-score, .taste-score{
+        display: flex;
+        justify-content: center;
+    }
+    .mail-score{
+        font-size: 32px;
+        color: #ffb000;
+        margin-bottom: 5px;
+    }
+    .mail-text{
+        font-size: 12px;
+        color: #656565;
+    }
+    .taste-text,.package-text {
+        font-size: px2rem(12px);
+        color: #554343;
+    }
+    .taste-score-text, .package-score-text{
+        font-size: 15px;
+        color: #ffb000;
+    }
+    .send-score-content {
+        display: flex;
+        flex-direction: column;
+        margin-top: px2rem(3px);
+    }
+    .send-score {
+        font-size: px2rem(24px);
+        color: #999;
+        margin-bottom: px2rem(5px);
+        text-align: center;
+    }
+    .send-text {
+        font-size: px2rem(12px);
+        color: #999;
+    }
+}
+
+.comment-item{
+    display: flex;
+    padding: 15px 15px 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    .comment-time{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: #898989;
+        font-size: 12px;
+    }
+    .avatar{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .nickname{
+        color: #2f2f2f;
+        font-size: 16px;
+    }
+    .star-and-time{
+        margin-top: 6px;
+        display: flex;
+    }
+    .send-time{
+        color: #898989;
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    .comment-text{
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .img-content{
+        margin-top: 8px;
+    }
+    .img-item{
+        display: block;
+        float: left;
+        width: 80px;
+        height: 80px;
+        background-size: cover;
+        background-position: center center;
+        margin-right: 5px;
+    }
+    .tag-info{
+        margin-top: 4px;
+        color: #898989;
+        font-size: 12px;
+        line-height: 15px;
+        background-image: url('../../assets/images/tag.png');
+        background-repeat: no-repeat;
+        background-position: left 1px;
+        background-size: 12px 12px;
+        padding-left: 20px;
+    }
+    .like-info{
+        margin-top: 4px;
+        color: #576b95;
+        font-size: 12px;
+        line-height: 18px;
+        background-image: url('../../assets/images/favor.png');
+        background-repeat: no-repeat;
+        background-position: left 1px;
+        background-size: 12px 12px;
+        padding-left: 20px;
+    }
+}
+
+// 商家信息
+.restanurant-content {
+    background-color: #f6f6f6;
+    overflow: hidden;
+    .restanurant-basic {
+        color: #2f2f2f;
+        background-color: #fff;
+        font-size: px2rem(14px);
+        margin-top: px2rem(10px);
+        padding-right: px2rem(10px);
+        padding-left: px2rem(15px);
+    }
+    .res-section {
+        padding-top: px2rem(15px);
+        padding-bottom: px2rem(15px);
+        border-bottom: 1px solid #f0f0f0;
+        display: flex;
+        &:before {
+            display: block;
+            content: '';
+            margin-right: px2rem(20px);
+            width: px2rem(16px);
+            height: px2rem(16px);
+            background-size: cover;
+        }
+    }
+    .restanurant-tel::before {
+        width: px2rem(19px);
+        background-image: url('../../assets/images/tel.png');
+    }
+    .restanurant-addr::before {
+        width: px2rem(19px);
+        background-image: url('../../assets/images/address.png');
+    }
+    .restanurant-send-time::before {
+        background-image: url('../../assets/images/time.png');
+    }
+    .restanurant-send-type::before {
+        background-image: url('../../assets/images/info.png');
+    }
+    .addr-wrap {
+        display: flex;
+    }
+    .addr-text {
+        flex: 1;
+        line-height: px2rem(20px);
+        margin-top: px2rem(-3px);
+    }
+    .meituan-send {
+        background-color: #ffd161;
+        color: #333;
+        font-size: px2rem(10px);
+        padding: px2rem(2px);
+        border-radius: px2rem(4px);
+        margin-right: px2rem(4px);
+    }
+    .restanurant-pay-type::before {
+        display: none;
+    }
+    .icon {
+        width: px2rem(17px);
+        height: px2rem(17px);
+        margin-right: px2rem(20px);
     }
 }

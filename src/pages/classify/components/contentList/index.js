@@ -25,7 +25,6 @@ class ContentList extends React.Component{
         }
     }
     render(){
-        console.log(this.props.list)
         return(
             <div className="ContentList-wrapper">
                 <ScrollView dis="content" loadCallback={this.onLoadPage.bind(this)} isend={this.state.isend}>

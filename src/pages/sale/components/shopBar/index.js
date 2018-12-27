@@ -1,7 +1,8 @@
 import React from 'react'
 import '../../index.scss'
 import { connect} from 'react-redux'
-import { setShowContent} from '../../store/actionCreator'
+import { toJS} from 'immutable'
+import { setShowContent, addSelectItem, mineSelectItem, clearCar} from '../../store/actionCreator'
 class ShopBar extends React.Component{
     getTotalPrice(){
         const { listData} = this.props
@@ -9,15 +10,15 @@ class ShopBar extends React.Component{
         let dotNum = 0
         let chooseList = []
         listData.map((item, i)=>{
-            let lists = item.get('spus')
+            let lists = item.spus
             lists.map((list, j) =>{
-                let chooseCount = list.get('chooseCount')
+                let chooseCount = list.chooseCount
                 if(chooseCount > 0){
                     dotNum += chooseCount
-                    list.set('_index', j)
-                    list.set('_outIndex', i)
+                    list._index= j
+                    list._outIndex= i
                     chooseList.push(list)
-                    totalPrice +=chooseCount * list.get('min_price')
+                    totalPrice +=chooseCount * list.min_price
                 }
             })
         })
@@ -28,16 +29,16 @@ class ShopBar extends React.Component{
         }
     }
     renderChooseItem(chooseList){
-        let list = chooseList || []
-        return list.map((item, index)=> {
+        let lists = chooseList || []
+        return lists.map((item, index)=> {
             return (
                 <div key={index} className="choose-item">
-                    <div className="item-name">{item.get('name')}</div>
-                    <div className="price">{item.get('min_price') * item.get('chooseCount')}</div>
+                    <div className="item-name">{item.name}</div>
+                    <div className="price">{item.min_price * item.chooseCount}</div>
                     <div className="select-content">
-                        <div onClick={()=> this.props.minusSelectItem(item)}  className="minus"></div>
-                        <div className="count">{item.get('chooseCount')}</div>
-                        <div onClick={()=> this.props.addSelectItem(item)} className="plus"></div>
+                        <div onClick={()=> this.props.minus(item)}  className="minus"></div>
+                        <div className="count">{item.chooseCount}</div>
+                        <div onClick={()=> this.props.add(item)} className="plus"></div>
                     </div>
                 </div>
             )
@@ -51,7 +52,7 @@ class ShopBar extends React.Component{
                 {this.props.showChooseContent?
                 <div className="choose-content">
                     <div className="content-top">
-                        <div className="clear-car">清空购物车</div>
+                        <div className="clear-car" onClick={()=> this.props.clearCar()}>清空购物车</div>
                     </div>
                     {this.renderChooseItem(chooseList)}
                 </div>:null}
@@ -71,7 +72,7 @@ class ShopBar extends React.Component{
 }
 const mapState = (state) =>({
     shipping_fee: state.getIn(['sale', 'shipping_fee']),
-    listData: state.getIn(['sale', 'listData']),
+    listData: state.getIn(['sale', 'listData']).toJS(),
     showChooseContent:state.getIn(['sale', 'showChooseContent'])
 })
 
@@ -79,13 +80,20 @@ const mapDispatch = (dispatch) =>({
     openChooseContent(){
         dispatch(setShowContent())
     },
-    minusSelectItem(item){
-
+    minus(item){
+        dispatch(mineSelectItem({
+            index: item._index,
+            outIndex: item._outIndex
+        }))
     },  
-    addSelectItem(item){
-        console.log(item.isMap())
-        // console.log(item.get('_index'))
-        // console.log(item.get('_outIndex'))
+    add(item){
+        dispatch(addSelectItem({
+            index: item._index,
+            outIndex: item._outIndex
+        }))
+    },
+    clearCar(){
+        dispatch(clearCar())
     }
 })
 

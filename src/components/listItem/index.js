@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.scss'
+import Star from '../star/index'
 export default class ListItem extends React.Component {
     // 渲染是否是新到或品牌
     renderBrand(listItem) {
@@ -8,30 +9,6 @@ export default class ListItem extends React.Component {
         } else {
             return <div className="brand brand-xin">新到</div>
         }
-    }
-    // 渲染评分
-    renderScore(listItem) {
-        let wm_poi_score = listItem.get('wm_poi_score') || ''
-        let score = wm_poi_score.toString()
-        let scroeArray = score.split('.')
-        let fullStar = parseInt(scroeArray[0])
-        let halfStar = parseInt(scroeArray[1]) >= 5 ? 1 : 0
-        let nullstar = 5 - fullStar - halfStar
-        let starJsx = []
-        for (let i = 0; i < fullStar; i++) {
-            starJsx.push(<div key={i + 'full'} className="star fullstar"></div>)
-        }
-        if (halfStar) {
-            for (let m = 0; m < halfStar; m++) {
-                starJsx.push(<div key={m + 'half'} className="star halfstar"></div>)
-            }
-        }
-        if (nullstar) {
-            for (let k = 0; k < nullstar; k++) {
-                starJsx.push(<div key={k + 'null'} className="star nullstar"></div>)
-            }
-        }
-        return starJsx
     }
     renderMounthNum(listItem) {
         let num = listItem.get('month_sale_num')
@@ -70,7 +47,8 @@ export default class ListItem extends React.Component {
                 <div className="item-info-content">
                     <p className="item-title">{listItem.get('name')}</p>
                     <div className="item-desc clearfix">
-                        <div className="item-score">{this.renderScore(listItem)}</div>
+                        <Star score={listItem.get('wm_poi_score')}/>
+                        {/* <div className="item-score">{this.renderScore(listItem)}</div> */}
                         <div className="item-count">月售{this.renderMounthNum(listItem)}</div>
                         <div className="item-distance">&nbsp;{listItem.get('distance')}</div>
                         <div className="item-time">{listItem.get('mt_delivery_time')}&nbsp;</div>

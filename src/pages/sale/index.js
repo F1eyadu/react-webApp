@@ -41,13 +41,15 @@ class Sale extends React.Component{
                 {
                     this.renderDiv()
                 }
+                {this.props.showChooseContent?<div className="mask"></div>:null}
             </div>
         )
     }
 }
 const mapState = (state) =>({
     tabs: state.getIn(['sale', 'tabs']),
-    activeKey: state.getIn(['sale', 'activeKey'])
+    activeKey: state.getIn(['sale', 'activeKey']),
+    showChooseContent: state.getIn(['sale', 'showChooseContent'])
 })
 
 const mapDispatch = (dispatch) =>({
